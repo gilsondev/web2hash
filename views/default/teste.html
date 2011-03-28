@@ -1,0 +1,30 @@
+{{extend 'layout.html'}}
+{{ i = 0 }}
+{{ for tweet in tweets: }}
+    {{ if i % 2: }}        
+        <div class="tweet">
+            <div class="tweet-image">
+                <img src="{{=tweet['profile_image_url']}}" alt="" />
+            </div>
+            <div class="tweet-row">
+                <a href="{{='http://twitter.com/'+tweet['from_user']}}">
+                    <span class="tweet-user-name">{{=tweet['from_user']}}</span>
+                </a>
+                <p class="tweet-text">{{=tweet['text']}}</p>   
+            </div>
+        </div>
+    {{ else: }}
+        <div class="tweet-odd">
+            <div class="tweet-image">
+                <img src="{{=tweet['profile_image_url']}}" alt="" />
+            </div>
+            <div class="tweet-row">
+                <a href="{{='http://twitter.com/'+tweet['from_user']}}">
+                    <span class="tweet-user-name">{{=tweet['from_user']}}</span>
+                </a>
+                <p class="tweet-text">{{=tweet['text']}}</p>   
+            </div>
+        </div>
+    {{ pass }}
+    {{ i = i + 1 }}  
+{{ pass }}
