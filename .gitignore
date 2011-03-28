@@ -1,0 +1,19 @@
+#
+# Ignorando algumas pastas
+#
+
+# Pastas de cache
+sessions/
+cache/
+errors/
+
+# Banco de dados
+databases/
+
+# Backup de arquivos e arquivos de pacote
+*.bak
+*.swp
+__init__.py
+
+# Arquivos compilados
+*.pyc
