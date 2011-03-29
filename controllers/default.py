@@ -9,9 +9,9 @@ def index():
     """
     Lista all the tweets
     """
-    tweets = hashw2p.search_hashs_web2py()
+    tweets_hash = hashw2p.search_hashs_web2py()
    
-    return dict(tweets=tweets)
+    return dict(tweets_hash=tweets_hash)
 
 
 def teste():
