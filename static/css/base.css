@@ -158,6 +158,8 @@ div#footer a {font-weight: bold;}
     font-size: 90%;
 }
 
+.tweet-text a {font-weight: bold;}
+
 /***************************
  * CSS 3 Buttons
  * http://github.com/michenriksen/css3buttons
