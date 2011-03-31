@@ -10,7 +10,7 @@
                 <a href="{{='http://twitter.com/'+tweet_hash['from_user']}}">
                     <span class="tweet-user-name">{{=tweet_hash['from_user']}}</span>
                 </a>
-                <p class="tweet-text">{{=tweet_hash['text']}}</p>   
+                <p class="tweet-text">{{=XML(tweet_hash['text'],sanitize=False)}}</p>   
             </div>
         </div>
     {{ else: }}
@@ -22,7 +22,7 @@
                 <a href="{{='http://twitter.com/'+tweet_hash['from_user']}}">
                     <span class="tweet-user-name">{{=tweet_hash['from_user']}}</span>
                 </a>
-                <p class="tweet-text">{{=tweet_hash['text']}}</p>   
+                <p class="tweet-text">{{=XML(tweet_hash['text'],sanitize=False)}}</p>      
             </div>
         </div>
     {{ pass }}
