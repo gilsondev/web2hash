@@ -16,13 +16,13 @@ html, body {
     background: -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#374837, endColorstr=#EDF5F2)";
 
     /* Para IE 5.5 - 7 */
-    background: filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#374837, endColorstr=#EDF5F2);        
+    background: filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#374837, endColorstr=#EDF5F2);
 }
 
 a {color: #374837;}
 
 h1, h2, h3, h4, h5, h6 {
-    color: #EDF5F2; 
+    color: #EDF5F2;
     text-shadow: 1px 1px 3px #000000;
 }
 
@@ -40,7 +40,7 @@ div#wrapper {
 }
 
 div#header {
-    height: 100px;    
+    height: 100px;
     text-align: center;
 }
 
@@ -49,7 +49,7 @@ h1#logo {
     background: url("../images/logo.png") no-repeat;
     width: 409px;
     height: 122px;
-    margin: 0 auto;    
+    margin: 0 auto;
 }
 
 h2#subtitle {
@@ -65,13 +65,13 @@ div#content {
     height: 400px;
     min-height: 200px;
     overflow: auto;
-    
+
     /* Para Webkit (Google Chrome, Safari, etc) */
     -webkit-box-shadow: rgba(0,0,0,1) 0 1px 6px;
-    
+
     /* Para Mozilla/Gecko (Firefox, etc) */
     -moz-box-shadow: rgba(0,0,0,1) 0 1px 6px;
-    box-shadow: rgba(0,0,0,1) 1px 1px 6px;    
+    box-shadow: rgba(0,0,0,1) 1px 1px 6px;
 }
 
 div#content img {
@@ -132,7 +132,7 @@ div#footer a {font-weight: bold;}
 
 .tweet-image {
     float: left;
-    padding: 3px 20px;    
+    padding: 3px 20px;
     height: 48px;
     overflow: hidden;
     width: 48px;
@@ -160,12 +160,21 @@ div#footer a {font-weight: bold;}
 
 .tweet-text a {font-weight: bold;}
 
+.tweet-text .actions {
+  float: right;
+   color: #000;
+}
+
+.tweet-text .actions a {
+  font-weight: normal;
+}
+
 /***************************
  * CSS 3 Buttons
  * http://github.com/michenriksen/css3buttons
  * created by Michael Henriksen
- * License: Unlicense 
- * 
+ * License: Unlicense
+ *
  * *******************/
 
 a.button { display: inline-block; padding: 3px 5px 3px 5px; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size: 12px; color: #3C3C3D; text-shadow: 1px 1px 0 #FFFFFF; background: #ECECEC url('../images/css3buttons_backgrounds.png') 0 0 no-repeat; white-space: nowrap; overflow: visible; cursor: pointer; text-decoration: none; border: 1px solid #CACACA; -webkit-border-radius: 2px; -moz-border-radius: 2px; -webkit-background-clip: padding-box; border-radius: 2px; outline: none; position: relative; zoom: 1; *display: inline; }
@@ -267,39 +276,39 @@ a.button:hover span.icon.user { background-position: 0 -869px }
  * Media queries for responsive design
  */
 
-@media all and (orientation:portrait) { 
+@media all and (orientation:portrait) {
   /* Style adjustments for portrait mode goes here */
-  
+
 }
 
-@media all and (orientation:landscape) { 
+@media all and (orientation:landscape) {
   /* Style adjustments for landscape mode goes here */
-  
+
 }
 
-/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)  
+/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)
    Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
 @media screen and (max-device-width: 480px) {
-  
-  
+
+
   /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you
-     j.mp/textsizeadjust 
+     j.mp/textsizeadjust
   html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
 }
 
 
-/* 
+/*
  * print styles
- * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
+ * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/
  */
 @media print {
   * { background: transparent !important; color: #444 !important; text-shadow: none !important; }
   a, a:visited { color: #444 !important; text-decoration: underline; }
-  a:after { content: " (" attr(href) ")"; } 
+  a:after { content: " (" attr(href) ")"; }
   abbr:after { content: " (" attr(title) ")"; }
   .ir a:after { content: ""; }  /* Don't show links for images */
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */ 
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
   tr, img { page-break-inside: avoid; }
   @page { margin: 0.5cm; }
   p, h2, h3 { orphans: 3; widows: 3; }

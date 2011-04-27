@@ -1,8 +1,11 @@
 {{extend 'layout.html'}}
+{{import urllib2}}
+{{import re}}
+
 {{ i = 0 }}
 {{ for tweet_hash in tweets_hash: }}
-    {{ if i % 2: }}        
-        <div class="tweet">
+    {{ _class = 'tweet' if i % 2 else 'tweet-odd' }}
+        <div class="{{=_class}}">
             <div class="tweet-image">
                 <img src="{{=tweet_hash['profile_image_url']}}" alt="" />
             </div>
@@ -10,21 +13,16 @@
                 <a href="{{='http://twitter.com/'+tweet_hash['from_user']}}">
                     <span class="tweet-user-name">{{=tweet_hash['from_user']}}</span>
                 </a>
-                <p class="tweet-text">{{=XML(tweet_hash['text'],sanitize=False)}}</p>   
+                <p class="tweet-text">
+                {{=XML(tweet_hash['text'],sanitize=False)}}
+                {{_status = re.compile('<.*?>', re.IGNORECASE).sub('', tweet_hash['text'])}}
+                {{_status = urllib2.quote(_status.encode('utf8'))}}
+                <span class='actions'>
+                  <a href="http://twitter.com/home?status=RT+{{='@%s:+%s'%(tweet_hash['from_user'], _status)}}" target="_blank">Retweet</a> <a href="http://twitter.com/home?status=@{{=tweet_hash['from_user']}}">Reply</a>
+                </span>
+                </p>
             </div>
         </div>
-    {{ else: }}
-        <div class="tweet-odd">
-            <div class="tweet-image">
-                <img src="{{=tweet_hash['profile_image_url']}}" alt="" />
-            </div>
-            <div class="tweet-row">
-                <a href="{{='http://twitter.com/'+tweet_hash['from_user']}}">
-                    <span class="tweet-user-name">{{=tweet_hash['from_user']}}</span>
-                </a>
-                <p class="tweet-text">{{=XML(tweet_hash['text'],sanitize=False)}}</p>      
-            </div>
-        </div>
-    {{ pass }}
-    {{ i = i + 1 }}  
+    {{ i += 1 }}
 {{ pass }}
+
